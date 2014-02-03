@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{19E8806E-7653-4BA1-9B97-356B44C4C82B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NODUS</RootNamespace>
+    <AssemblyName>NODUS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.6.4.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions.cs" />
+    <Compile Include="ApplicationException.cs" />
+    <Compile Include="Exceptions\Error.cs" />
+    <Compile Include="Exceptions\ReplyExceptionType.cs" />
+    <Compile Include="Extensions\api_reply_extensions.cs" />
+    <Compile Include="Extensions\ienumerable_extensions.cs" />
+    <Compile Include="Extensions\node_action_extensions.cs" />
+    <Compile Include="Handlers\ActionHttpHandler.cs" />
+    <Compile Include="Handlers\ActionRouteHandler.cs" />
+    <Compile Include="Handlers\BaseHttpHandler.cs" />
+    <Compile Include="Handlers\HttpHandler.cs" />
+    <Compile Include="Handlers\HttpRouteHandler.cs" />
+    <Compile Include="Handlers\HttpRoutes.cs" />
+    <Compile Include="Handlers\NodeHandler.cs" />
+    <Compile Include="Handlers\ViewHandler.cs" />
+    <Compile Include="Handlers\ViewRouteHandler.cs" />
+    <Compile Include="Interfaces\IModuleSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\IViewLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\IInitializer.cs" />
+    <Compile Include="Initializer.cs" />
+    <Compile Include="Interfaces\IActionArgument.cs" />
+    <Compile Include="Interfaces\IModuleInfo.cs" />
+    <Compile Include="ModuleInfo.cs" />
+    <Compile Include="ModuleSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NodeAction.cs" />
+    <Compile Include="NodeAttributes.cs" />
+    <Compile Include="NodusException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objects\Interfaces\IOptionList.cs" />
+    <Compile Include="Objects\OptionList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Objects\OptionListTypeConverter.cs" />
+    <Compile Include="OptionLists\SessionKey.cs" />
+    <Compile Include="Exceptions\ReplyException.cs" />
+    <Compile Include="Collections\ServiceCollection.cs" />
+    <Compile Include="JSON\CustomContractResolver.cs" />
+    <Compile Include="Services\DefaultHandlerLoader.cs" />
+    <Compile Include="Interfaces\IHandlersLoader.cs" />
+    <Compile Include="Interfaces\IHttpContextProvider.cs" />
+    <Compile Include="Services\DefaultHttpContextProvider.cs" />
+    <Compile Include="ValidationException.cs" />
+    <Compile Include="View.cs" />
+    <Compile Include="Services\DefaultViewLoader.cs" />
+    <Compile Include="Services\QueryString.cs" />
+    <Compile Include="Services\TypeConverter.cs" />
+    <Compile Include="Utilities\AESEncryption.cs" />
+    <Compile Include="Utilities\AssemblyScanner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\IActionHandlerLoader.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="OptionLists\ErrorSeverity.cs" />
+    <Compile Include="OptionLists\ExceptionType.cs" />
+    <Compile Include="Extensions\node_extensions.cs" />
+    <Compile Include="SettingsInitializer.cs" />
+    <Compile Include="Extensions\dicionary_extensions.cs" />
+    <Compile Include="Extensions\object_extensions.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Handlers\NodeRouteHandler.cs" />
+    <Compile Include="Interfaces\INodeCollection.cs" />
+    <Compile Include="Collections\NodeCollection.cs" />
+    <Compile Include="Utilities\Session.cs" />
+    <Compile Include="OptionLists\CurrentEnvironment.cs" />
+    <Compile Include="Extensions\string_extensions.cs" />
+    <Compile Include="Application.cs" />
+    <Compile Include="Interfaces\INodeAction.cs" />
+    <Compile Include="Interfaces\IActionCollection.cs" />
+    <Compile Include="Collections\ActionCollection.cs" />
+    <Compile Include="Utilities\Create.cs" />
+    <Compile Include="Interfaces\IFileTypes.cs" />
+    <Compile Include="Reply.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="JSON\Serializers\NodeActionSerializer.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ProjectExtensions />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

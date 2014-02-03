@@ -1,0 +1,1 @@
+﻿var x = '{include=template-1.html} & {include=template-2.html}';
