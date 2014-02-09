@@ -35,9 +35,6 @@ namespace NODUS {
 		protected Node( Node parent_node ) {
 			Id = this.get_uid();
 
-			// set the default name
-			// Name = GetType().Name;
-
 			Actions = action_collection.GetByNodeType( GetType() );
 
 			Index = 0;
@@ -55,7 +52,7 @@ namespace NODUS {
 
 		public void Update( ) {
 			// parent must be asigned before identifying the namespace
-			Namespace = (parent_node == null ? Name : parent_node.Namespace + "." + Name).to_snake_case();
+			Namespace = (parent_node == null ? Name : parent_node.Namespace + "." + Name);
 		}
 	}
 
